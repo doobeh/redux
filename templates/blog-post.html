@@ -1,0 +1,36 @@
+{% extends 'layout.html'%}
+{% from "macros/blog.html" import render_blog_post %}
+
+{% block body %}
+<div class="container">
+    <div class="row main-blog">
+        <div class="col-lg-8">
+            {% block post %}
+            {{ render_blog_post(this) }}
+            {% endblock post %}
+        </div>
+
+        <!-- === SIDEBAR === -->
+
+        <div class="col-lg-4 sidebar-zone">
+            <h4>SCRIBBLES <i class="icon-chevron-down"></i></h4>
+            <br>
+            <h6>Something Important</h6>
+            <p><a href="#">Something Important</a></p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            <br>
+
+            <h6>CATEGORIES</h6>
+            <p>
+                <i class="icon-folder-open-alt"></i> <a href="#">Design</a><br/>
+                <i class="icon-folder-open-alt"></i> <a href="#">Develop</a><br/>
+                <i class="icon-folder-open-alt"></i> <a href="#">Photography</a><br/>
+                <i class="icon-folder-open-alt"></i> <a href="#">Wordpress</a>
+            </p>
+            <br>
+
+        </div><!-- /col-lg-4 -->
+    </div><!-- /row -->
+</div><!-- /container -->
+{% endblock body %}
