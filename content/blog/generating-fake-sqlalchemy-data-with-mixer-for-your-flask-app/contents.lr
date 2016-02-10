@@ -1,8 +1,4 @@
-title: Hello Website
----
-pub_date: 2016-02-09
----
-author: Anthony Plunkett
+title: Fake Data for your Flask SQLAlchemy App
 ---
 body:
 
@@ -17,10 +13,6 @@ with a few thousand elements of data.
 
 Lets build a straightforward application that has `Users`, `Posts` and `Comments`
 and manually set up a `User`, `Post` and `Comment`.
-
-```python
-print('hello')
-```
 
 
 ```python
@@ -125,3 +117,5 @@ have known to randomly select an existing entry from the database and so would
 have created a new `User` for each `Comment` *and* `Post`.
 
 [mixer]: https://mixer.readthedocs.org/en/latest/
+---
+pub_date: 2015-09-08

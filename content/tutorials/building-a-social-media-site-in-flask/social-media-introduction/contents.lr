@@ -1,0 +1,27 @@
+title: Social Media Introduction
+---
+content:
+
+Social Media is a little bit of a nebulus term, my definition is [pretty straight-forward: Easy to sign-up, all users can create content.  They can comment or favourite that content and can follow and communicate with one another.
+
+So lets talk features, these are the foundational elements that are required 
+Features
+========
+
+- **User Authentication**— Users should be able to easily sign up for an account, and be able to login and manage their profiles.
+- **Content Creation**— Users can create content for the site.
+- **Commentary**— Every user has the ability to comment on content on the site
+- **User to User Communication**— User's can send each other direct, private messages.
+- **Favourites/Follows**— Content can be favourited, and Users can follow each other.
+- **Administration**— Content can be deleted, user's banned or timed-out.
+
+
+[twitter]: http://www.twitter.com
+[facebook]: http://www.facebook.com
+[reddit]: http://www.reddit.com
+[stackoverflow]: http://www.stackoverflow.com
+[metafilter]: http://www.metafilter.com
+---
+date: 2016-02-10
+---
+description: What *is* a social media site?  What common elements do they share, and what does that mean in more generic terms.  We'll talk about our goals and how by defining a strong foundation, we can easily build a project that can be easily shaped to fit your particular need.

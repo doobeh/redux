@@ -1,0 +1,7 @@
+title: Building a Social Media Site in Flask
+---
+date: 2016-02-10
+---
+description: Lets walk through building a common social-media site from scratch.  We'll start by defining what a social media site actually *is* (you'll be surprised) and then plan our site to build out all the foundation elements that are common among them.
+---
+type: Flask
