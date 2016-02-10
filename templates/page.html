@@ -1,6 +1,35 @@
 {% extends "layout.html" %}
+{% from 'macros/wrap.html' import render_wrap %}
 {% block title %}{{ this.title }}{% endblock %}
 {% block body %}
-  <h2>{{ this.title }}</h2>
-  {{ this.body }}
+    <div id="w1">
+		<div class="container">
+			<br>
+			<div class="col-lg-10 col-lg-offset-1 centered">
+				<h2>{{ this.title }}</h2>
+				<br>
+				<hr>
+			</div>
+			<div class="row">
+                {% if notes %}
+                    <div class="col-lg-2 col-lg-offset-1">
+                    <h3>Notes</h3>
+                    {% for note in notes %}
+					    <p>Every agency has their history. This is ours.</p>
+                    {% endfor %}
+				</div>
+                <div class="col-lg-8'>
+                    {{ this.body }}
+                </div>
+                {% else %}
+                <div class="col-lg-10 col-lg-offset-1">
+					{{ this.body }}
+				</div>
+                {% endif %}
+			</div><!-- /row -->
+		</div><!-- /container -->
+    </div> <!-- /White Wrap 1 / Intro -->
+
+    {{ render_wrap('Hello','<p>something else here</p>') }}
+
 {% endblock %}
