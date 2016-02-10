@@ -37,16 +37,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><b>Ergo</b></a>
+          <a class="navbar-brand" href="{{ '/'|url }}"><b>Ergo</b></a>
         </div>
         <div class="navbar-collapse collapse">
              <ul class="nav navbar-nav">
         <li{% if this._path == '/' %} class="active"{% endif
-          %}><a href="{{ '/'|url }}">Welcome</a></li>
+          %}><a href="{{ '/'|url }}">Home</a></li>
         {% for href, title in [
           ['/blog', 'Blog'],
-          ['/projects', 'Projects'],
-          ['/about', 'About']
+
+          ['/about', 'About'],
+          ['/tutorials', 'Tutorials'],
         ] %}
           <li{% if this.is_child_of(href) %} class="active"{% endif
             %}><a href="{{ href|url }}">{{ title }}</a></li>

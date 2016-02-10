@@ -1,0 +1,10 @@
+<ul class="blog-index">
+    <li>First</li>
+    {% for post in this.children %}
+    <li>
+      <a href="{{ post.link }}">{{ post.title }}</a> —
+      on {{ post.pub_date|dateformat }}
+    </li>
+    {% endfor %}
+    <li>Last</li>
+</ul>

@@ -9,27 +9,47 @@
 				<h2>{{ this.title }}</h2>
 				<br>
 				<hr>
+                {{ this.body }}
 			</div>
-			<div class="row">
-                {% if notes %}
-                    <div class="col-lg-2 col-lg-offset-1">
-                    <h3>Notes</h3>
-                    {% for note in notes %}
-					    <p>Every agency has their history. This is ours.</p>
-                    {% endfor %}
-				</div>
-                <div class="col-lg-8'>
-                    {{ this.body }}
-                </div>
-                {% else %}
-                <div class="col-lg-10 col-lg-offset-1">
-					{{ this.body }}
-				</div>
-                {% endif %}
-			</div><!-- /row -->
 		</div><!-- /container -->
     </div> <!-- /White Wrap 1 / Intro -->
 
-    {{ render_wrap('Hello','<p>something else here</p>') }}
+    <!-- Footer Wrap -->
+	<div class="ab">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h3>Blog</h3>
+					<p>
+						{% for post in site.query('/blog').limit(5) %}
+                        <a href="{{ post|url }}">{{ post.title }}</a><br />
+                        {% endfor %}
+					</p>
+				</div>
+                <div class="col-lg-4">
+					<h3>Tutorials</h3>
+					<p>
+						{% for post in site.query('/tutorials').limit(5) %}
+                        <a href="{{ post|url }}">{{ post.title }}</a><br />
+                        {% endfor %}
+					</p>
+				</div>
+                <div class="col-lg-4">
+					<h3>Scribbles</h3>
+					<p>
+						{% for post in site.query('/scribbles').limit(3) %}
+                        <a href="{{ post.link }}">{{ post.title }}</a>&mdash; {{ post.notes }}<br />
+                        {% endfor %}
+					</p>
+				</div>
+{#				<div class="col-lg-4">#}
+{#					<h3>Newsletter</h3>#}
+{#					<p>Each month we collect the best stuff around the design world and share it with you.</p>#}
+{#					<button type="button" class="btn btn-theme">SUBSCRIBE</button>#}
+{#				</div>#}
+
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /Footer wrap -->
 
 {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'layout.html'%}
+{% from "macros/blog.html" import render_blog_post %}
+{% from "macros/pagination.html" import render_pagination %}
+
+{% block body %}
+    <div id="tut">
+        <div class="container">
+            <br/>
+            <div class="col-lg-10 col-lg-offset-1 centered">
+                <h2>{{ this.title }}</h2>
+                <br />
+                {{ this.description }}
+                <hr />
+            </div>
+
+            {% for child in this.children %}
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h3>{{ child.title }}</h3>
+					<p>{{ child.type }}</p>
+				</div>
+				<div class="col-lg-8">
+					{{ child.description }}
+                    <a href="{{ child|url }}">View Class</a>
+				</div>
+			</div>
+            {% endfor %}
+
+        </div><!-- /container --></div><!-- w1 -->
+{% endblock body %}
+
+
+{# ####### #}
+
+
+
+
+

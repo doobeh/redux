@@ -1,0 +1,21 @@
+<!-- === SIDEBAR === -->
+
+        <div class="col-lg-4 sidebar-zone">
+            <h4>SCRIBBLES <i class="icon-chevron-down"></i></h4>
+
+                {% for scribble in site.query('/scribbles') %}
+                <p><a href="{{ scribble.link }}">{{ scribble.title }}</a> &mdash; {{ scribble.notes }}</p>
+                {% endfor %}
+
+
+            <h6>CATEGORIES</h6>
+            <p>
+                <i class="icon-folder-open-alt"></i> <a href="#">Design</a><br/>
+                <i class="icon-folder-open-alt"></i> <a href="#">Develop</a><br/>
+                <i class="icon-folder-open-alt"></i> <a href="#">Photography</a><br/>
+                <i class="icon-folder-open-alt"></i> <a href="#">Wordpress</a>
+            </p>
+            <br>
+
+        </div><!-- /col-lg-4 -->
+        <!-- === CLOSE SIDEBAR === -->

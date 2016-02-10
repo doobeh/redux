@@ -2,6 +2,7 @@
 name = redux
 locale = en_US
 url_style = absolute
+url = 'http://ergo.io'
 
 [packages]
 lektor-markdown-admonition = 0.1

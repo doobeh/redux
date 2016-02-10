@@ -3,7 +3,7 @@ body {
     font-family: Lato;
     font-weight: 300;
     font-size: 16px;
-    color: #555;
+    color: #000000;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch
 }
@@ -32,7 +32,7 @@ p {
 }
 
 a {
-    color: #f85c37;
+    color: #00072f;
     word-wrap: break-word;
     -webkit-transition: color .1s ease-in, background .1s ease-in;
     -moz-transition: color .1s ease-in, background .1s ease-in;
@@ -41,8 +41,10 @@ a {
     transition: color .1s ease-in, background .1s ease-in
 }
 
+
+
 a:hover, a:focus {
-    color: #7b7b7b;
+    color: rgba(12, 12, 24, 0.82);
     text-decoration: none;
     outline: 0
 }
@@ -273,6 +275,32 @@ input[type=submit] {
     padding-right: 0
 }
 
+/* Tutorial */
+
+#tut {
+    background: #fff;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#tut i {
+    font-size: 70px;
+    color: #2f2f2f;
+    padding-bottom: 30px;
+    padding-left: 23px;
+    padding-right: 23px
+}
+
+#tut i:hover {
+    color: #f1c40f
+}
+
+#tut h1 {
+    font-size: 90px
+}
+
+/* End Tutorial */
+
 #w1 {
     background: #fff;
     padding-top: 50px;
@@ -313,8 +341,40 @@ input[type=submit] {
 
 #f {
     background: #2c3e50;
-    padding-top: 50px;
-    padding-bottom: 50px
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+
+
+
+
+/* A Band of Colour */
+
+.ab {
+    background: #374a5c;
+    padding-top: 10px;
+    padding-bottom: 0px
+}
+
+.ab a {
+    color: #fff;
+}
+
+.ab p {
+    color: #fff;
+}
+
+.ab h3 {
+    color: #fff;
+}
+
+
+/* Footer */
+
+#f a {
+    color: #ffffff;
+    font-weight: bold;
 }
 
 #f h3 {
