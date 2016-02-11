@@ -1,0 +1,7 @@
+title: Better Pagination in Flask
+---
+date: 2016-02-11
+---
+description: Pagination is common— lets make a generic macro that works with *all* pagination to save us effort.
+---
+type: Flask
