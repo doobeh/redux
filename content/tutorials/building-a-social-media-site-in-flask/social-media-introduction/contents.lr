@@ -30,7 +30,7 @@ news articles and editorials.  Users (website visitors) can comment on or share
 that content with each other.  
 User's can follow (via RSS or Email alerts) some categories or journalists.
 
-I point this out because the foundations of most websites are quite similar
+I point this out because the foundations of most websites are quite similar—
 we store content, present it to users who can often comment or share that
 content. The _social_ element is essentially just breaking down the 
 barrier saying 'this set of users can create content' and allowing everyone
@@ -58,3 +58,5 @@ users interact and find each other?
 date: 2016-02-10
 ---
 description: What *is* a social media site?  What common elements do they share?  We'll talk about identifying these common foundations and talk about how those foundations can help us build not just a particular type of site, but any site we desire.
+---
+sort_key: 1
