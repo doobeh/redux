@@ -114,12 +114,27 @@ ring_world = Book(title='Ring World')
 fahrenheit = Book(title='Fahrenheit 451')
 
 bob.books = [dune, moby_dick]
-carol.books = [ring_world, fahrenheit]
+carol.books = [fahrenheit]
 
 db.session.add(bob)
 db.session.add(carol)
 db.session.commit()
 ```
+
+You note that we only add `bob` and `carol` to the session before
+we commit to the database, this is because SQLAlchemy is smart 
+enough to add the books that we've assigned to them to the session
+automatically so we don't have to— quite the time-saver!
+
+With that in mind, it's really easy to add another book to `carol` by
+doing the following.
+
+```python
+carol.books.append(ring_world)
+db.session.commit()
+```
+SQLAlchemy automatically adds `ring_world` to the session, and so
+it's sent to the database when we commit the session.
 
 And finally, the fun step— querying the models and relations.
 

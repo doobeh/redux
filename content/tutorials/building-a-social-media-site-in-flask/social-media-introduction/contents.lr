@@ -2,26 +2,59 @@ title: Social Media Introduction
 ---
 content:
 
-Social Media is a little bit of a nebulus term, my definition is [pretty straight-forward: Easy to sign-up, all users can create content.  They can comment or favourite that content and can follow and communicate with one another.
+What does it mean for a site to be a classed as *Social Media*?  To me it's
+pretty simple:
 
-So lets talk features, these are the foundational elements that are required 
-Features
-========
+-	Does the site allows you to create content, either original or curated
+	from elsewhere for other users to view?
+-	Can you follow other users, so you're alerted when they post content?
+- 	Can you remark, favourite or otherwise indicate your feelings towards 
+	content on the site?
 
-- **User Authentication**— Users should be able to easily sign up for an account, and be able to login and manage their profiles.
-- **Content Creation**— Users can create content for the site.
-- **Commentary**— Every user has the ability to comment on content on the site
-- **User to User Communication**— User's can send each other direct, private messages.
-- **Favourites/Follows**— Content can be favourited, and Users can follow each other.
-- **Administration**— Content can be deleted, user's banned or timed-out.
+With those elements in mind, lets see how if popular social media sites mesh
+with them:
 
+**Facebook**— Users can create content through posts or status updates, which
+can be commented, or favourited by other users. Users can friend other users
+which gives them updates and alerts about the activities of each other.
+
+**Tumblr**— Users can create content by creating posts on their own page, which
+can be reblogged and commented upon, or liked by other users.  Users can follow
+each other to get alerted.
+
+Now lets pick a site, one that the majority of people wouldn't consider being a 
+social media site— [The New York Times][nyt] and see how it fairs.
+
+**New York Times**— Users (editors, journalists) can create content by posting
+news articles and editorials.  Users (website visitors) can comment on or share 
+that content with each other.  
+User's can follow (via RSS or Email alerts) some categories or journalists.
+
+I point this out because the foundations of most websites are quite similar
+we store content, present it to users who can often comment or share that
+content. The _social_ element is essentially just breaking down the 
+barrier saying 'this set of users can create content' and allowing everyone
+to create that primary content.
+
+These common foundations are great news, because we as developers can learn
+how to build these foundations to get our sites ninety-percent complete, then
+add in the special sauce that makes our web-application unique. For Youtube, 
+that's video, Facebook has a friendship confirmation, Twitter has their 
+hashtag for discovering trends.
+
+Visit your favourite sites, but step back and think about the foundations,
+scrape away all the pretty interface and think to yourself: what is the 
+primary content? What is the site's idea of comments/likes? How do 
+users interact and find each other?
 
 [twitter]: http://www.twitter.com
 [facebook]: http://www.facebook.com
 [reddit]: http://www.reddit.com
 [stackoverflow]: http://www.stackoverflow.com
 [metafilter]: http://www.metafilter.com
+[nyt]: http://www.nytimes.com/
+
 ---
 date: 2016-02-10
 ---
-description: What *is* a social media site?  What common elements do they share, and what does that mean in more generic terms.  We'll talk about our goals and how by defining a strong foundation, we can easily build a project that can be easily shaped to fit your particular need.
+description: What *is* a social media site?  What common elements do they share?  We'll talk about identifying these common foundations and talk about how those foundations can help us build not just a particular type of site, but any site we desire.
