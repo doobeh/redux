@@ -20,7 +20,12 @@
 				</div>
 				<div class="col-lg-8">
 					{{ child.description }}
-                    <a href="{{ child|url }}">View Tutorial</a>
+                    {% if child.children.count() > 1 %}
+                        <a class="btn btn-primary" href="{{ child|url }}">View Classes</a>
+                    {% else %}
+                        <a class="btn btn-primary" href="{{ child.children.first()|url }}">View Tutorial</a>
+                    {% endif %}
+
 				</div>
 			</div>
             {% endfor %}
