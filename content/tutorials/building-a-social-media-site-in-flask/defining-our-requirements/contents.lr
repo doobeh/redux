@@ -1,0 +1,60 @@
+title: Defining our Project
+---
+content:
+
+_Work in progress: last updated 11th February 2016_
+
+One of my favourite sites on the web is MetaFilter— it's like a low-noise version of Reddit.  It's split into several sub-sites, the main one "MetaFilter" is a feed of  user-submitted posts about interesting things found on the web.  It also has a question and answer sub-site, and several smaller areas (Music, Projects, Meetups, and Meta).
+
+We're going to build a site similar to MetaFilter with a few twists to bring it closer to the more user-centric social media sites.  Lets define what that means by imagining a user and telling a story about them visiting the site.  Afterwards we'll break that story down into what development elements are required to bring that story to life.  We'll call our project _Squarker_.
+
+Alice's Adventure
+=================
+
+Alice goes to visit Squarker, it's her first time there— she's presented with a big login and signup form and a brief introduction to the site.  Her friend has recommended the site, so she fills in her Name, Email and Password and clicks the Sign Up button.  Immediately her email dings with a new message from Squarker asking her to confirm her identity-- she clicks the confirmation link and is taken to a Welcome and introduction page.
+
+She's asked for a few of her favourite categories— she picks Space, Politics, Technology, and Comedy then clicks Next.
+
+The site highlights a few members that share common interests, with a little about them,  and asks if she wishes to follow them, she picks a few and clicks Finish.
+
+She's then taken to the homepage, where she can see a timeline of posts from the people she has followed, in the sidebar there's a list of popular categories, when she clicks on a category the posts filter to show only posts of that type.  
+
+In the top navigation bar, she sees a link for 'Everything' which she clicks— which loads a full feed of all recent posts to the site with the same side-bar filters available.
+
+She see's a post she likes the sound of "Thermodynamics of Cats" and clicks on it-- it loads and she reads the contents, under the post are several comments from other users, she favourites a few.
+
+She's enjoying the post she's reading-- so clicks on the follow button by the authors name. Now the site will include that user in her homepage feed.  Alice is pretty read-up on Cat Thermodynamics, and wants to send the author a private message-- she clicks on their name, and then on the Mail button, fills in the form and sends off the message.
+
+She continues browsing the site, and after a few minutes she notices an envelope icon in her navigation bar-- she clicks it and see's a reply to the message she sent earlier.
+
+She decides to create her own post— she clicks on the New Post option in the main navigation and fills in her post information, title, summary, content, and categories.
+
+The next morning she logs back in, and sees that she's got an alert icon in her navigation bar, she clicks it and it tells her two people have followed her and she's gotten seven favourites since her last visit.
+
+Breakdown
+=========
+
+That's a lengthy story, but it defines a lot of the user interaction with the site, now that we know the story we just need to do the fun task of building it to match.
+
+Lets quickly break down components that we require, along with a few not mentioned.
+
+**USER AUTHENTICATION**— Users need to be able to register, login, logout and request password resets.  We're also going to implement user roles, so we can have administrative users that can ban, or time-out troublesome users.  Perhaps it would be good to have a secondary role to allow the user-to-user messaging feature.
+
+**POSTS & COMMENTS**— A way for a user to add a post, perhaps with an editing function within a defined time-period to allow them to self-correct typo's.  Users need to be able to leave comments on posts.
+
+**FAVOURITES**— Users can favorite posts or comments. They can also view a page that shows all their recent favourites.
+
+**FOLLOWING**— Users can choose to follow each other, when they do their feed reshapes itself to include posts from their social circle.
+
+**MESSAGING**— Basic user-to-user messaging needs to be implemented to allow simple communication between users outside of the post/comment system.
+
+
+
+[ Next Steps ]
+
+---
+date: 2016-02-10
+---
+description: So, what are we actually going to build?  We'll keep the foundations we've already identified in mind and break it down into further manageable pieces which we can then use as the basis of our development.
+---
+sort_key: 2

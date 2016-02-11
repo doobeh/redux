@@ -1,0 +1,13 @@
+title: Be Lazy— Don't Reinvent The Wheel
+---
+content:
+
+_Work in progress: last updated 11th February 2016_
+
+
+---
+date: 2016-02-11
+---
+description: Most of the features of our project are well trodden elements, lets use the hard work of others to speed up our own development.  We're going to cover what our core features are, and what parts of the Flask ecosystem can help build them quickly.
+---
+sort_key: 3
