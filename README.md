@@ -1,3 +1,5 @@
+Requires Development version of Lektor (for the sibling support).
+
 Blogs > Blog
 ============
 Standard blog listing.

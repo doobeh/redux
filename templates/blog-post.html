@@ -2,16 +2,20 @@
 {% from "macros/blog.html" import render_blog_post %}
 
 {% block body %}
-<div class="container">
-    <div class="row main-blog">
-        <div class="col-lg-8">
-            {% block post %}
-            {{ render_blog_post(this) }}
-            {% endblock post %}
-        </div>
 
-        {% include 'includes/sidebar.html' %}
 
-    </div><!-- /row -->
-</div><!-- /container -->
+        <div class="container">
+            <div class="row main-blog">
+                <div class="col-lg-8">
+                    {% block post %}
+                        {{ render_blog_post(this) }}
+                    {% endblock post %}
+                </div>
+
+                {% include 'includes/sidebar.html' %}
+
+            </div><!-- /row -->
+        </div><!-- /container -->
+
+
 {% endblock body %}

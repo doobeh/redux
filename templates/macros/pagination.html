@@ -6,11 +6,29 @@
             {% if pagination.has_prev %}
                 <a href="{{ pagination.prev|url }}"><i class="fa fa-caret-left"></i> PREVIOUS</a>
             {% else %}
-                <span class="disabled">&laquo; Previous</span>
+                <span class="disabled"><i class="fa fa-caret-left"></i> PREVIOUS</span>
+            {% endif %}
+            <span class="disabled">|</span>
+            {% if pagination.has_next %}
+                <a href="{{ pagination.next|url }}">NEXT  <i class="fa fa-caret-right"></i></a>
+            {% else %}
+                <span class="disabled">NEXT <i class="fa fa-caret-right"></i></span>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro render_siblings(pagination) %}
+    <div class="col-md-9 col-md-offset-3 blog-footer centered">
+        <div class="pagination">
+            {% if pagination.prev_page %}
+                <a href="{{ pagination.prev_page|url }}"><i class="fa fa-caret-left"></i> PREVIOUS</a>
+            {% else %}
+                <span class="disabled"><i class="fa fa-caret-left"></i> PREVIOUS</span>
             {% endif %}
             |
-            {% if pagination.has_next %}
-                <a href="{{ pagination.next|url }}">Next &raquo;</a>
+            {% if pagination.next_page %}
+                <a href="{{ pagination.next_page|url }}">NEXT  <i class="fa fa-caret-right"></i></a>
             {% else %}
                 <span class="disabled">NEXT <i class="fa fa-caret-right"></i></span>
             {% endif %}

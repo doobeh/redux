@@ -3,35 +3,35 @@
 {% from "macros/pagination.html" import render_pagination %}
 
 {% block body %}
-    <div id="tut">
-        <div class="container">
-            <br/>
-            <div class="col-lg-10 col-lg-offset-1 centered">
-                <h2>{{ this.title }}</h2>
-                <br />
-                {{ this.description }}
-                {% if this.children.count() == 1 %}
-                    <a class="btn btn-primary btn-xs" href="{{ this.children.first()|url }}">View Class</a>
-                {% endif %}
-                <hr />
-            </div>
-            {% if this.children.count() > 1 %}
-                {% for child in this.children %}
-                <div class="row">
-                    <div class="col-lg-2 col-lg-offset-1">
-                        <h3>{{ child.title }}</h3>
-                        <p>{{ child.type }}</p>
-                    </div>
-                    <div class="col-lg-8">
-                        {{ child.description }}
-                        <a class="btn btn-primary btn-xs" href="{{ child|url }}">View Class</a>
-                    </div>
-                </div>
-                {% if not loop.last %}<hr/>{% endif %}
-                {% endfor %}
-            {% endif %}
 
-        </div><!-- /container --></div><!-- w1 -->
+    <div class="container">
+        <br/>
+        <div class="col-lg-10 col-lg-offset-1 centered">
+            <h2>{{ this.title }}</h2>
+            <br />
+            {{ this.description }}
+            {% if this.children.count() == 1 %}
+                <a class="btn btn-primary btn-xs" href="{{ this.children.first()|url }}">View Class</a>
+            {% endif %}
+            <hr />
+        </div>
+        {% if this.children.count() > 1 %}
+            {% for child in this.children %}
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <h3>{{ child.title }}</h3>
+                    <p>{{ child.type }}</p>
+                </div>
+                <div class="col-lg-8">
+                    {{ child.description }}
+                    <a class="btn btn-primary btn-xs" href="{{ child|url }}">View Class</a>
+                </div>
+            </div>
+            {% if not loop.last %}<hr/>{% endif %}
+            {% endfor %}
+        {% endif %}
+    </div><!-- /container -->
+
 {% endblock body %}
 
 

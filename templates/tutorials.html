@@ -3,22 +3,22 @@
 {% from "macros/pagination.html" import render_pagination %}
 
 {% block body %}
-    <div id="tut">
+
         <div class="container">
             <br/>
             <div class="col-lg-10 col-lg-offset-1 centered">
-                <h2>A slowly growing selection of <b>Tutorials</b>, feedback always wanted.</h2>
+                <h2>A slowly growing selection of <b>Tutorials</b>, feedback always welcome.</h2>
                 <br />
                 <hr />
             </div>
 
             {% for child in this.children %}
 			<div class="row">
-				<div class="col-lg-2 col-lg-offset-1">
+				<div class="col-lg-3 col-lg-offset-1">
 					<h3>{{ child.title }}</h3>
 					<p>{{ child.type }}</p>
 				</div>
-				<div class="col-lg-8">
+				<div class="col-lg-7">
 					{{ child.description }}
                     {% if child.children.count() > 1 %}
                         <a class="btn btn-primary" href="{{ child|url }}">View Classes</a>
@@ -29,10 +29,7 @@
 				</div>
 			</div>
             {% endfor %}
-
-
         </div><!-- /container -->
-    </div><!-- w1 -->
 {% endblock body %}
 
 

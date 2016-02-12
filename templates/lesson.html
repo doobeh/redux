@@ -1,0 +1,22 @@
+{% extends 'layout.html'%}
+{% from "macros/class.html" import render_tutorial_class %}
+{% from "macros/pagination.html" import render_siblings %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row main-blog">
+            <div class="col-lg-8">
+                {% block post %}
+                {{ render_tutorial_class(this) }}
+                {% endblock post %}
+                {{ render_siblings(this.get_siblings()) }}
+            </div>
+
+    {#        {{ render_siblings(this.get_siblings()) }}#}
+            {% include 'includes/sidebar.html' %}
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+{% endblock body %}
