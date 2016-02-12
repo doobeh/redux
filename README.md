@@ -1,28 +1,8 @@
-Requires Development version of Lektor (for the sibling support).
+nb: Requires Development version of Lektor (for the sibling support).
 
-Blogs > Blog
-============
-Standard blog listing.
+**Blogs > Blog**— Random musings and short snippets.
 
-Scribbles > scribble
-====================
-Linked List type entries.
+**Scribbles > scribble**— Linked list, super quick notes.
 
-Tutorials > Tutorial > Class
-======================
-Example:
-
-Tutorials:
-    1. How to drink beer
-    2. How to grow a tomato
-
-Tutorial (1. How to drink beer)
-
-    A. Get Beer Bottle
-    B. Open Bottle
-    C. Drink Beer
-
-Class (A. Get Beer Bottler):
-
-    Open your front door and walk to
-    the local grocery store... etc.
+**Tutorials > Tutorial > Lesson**— Longer, thought out tutorials, which
+can optionally break down into lessons if it's a multi-parter.
