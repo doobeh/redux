@@ -1,0 +1,7 @@
+title: Nginx to Flask Communications
+---
+date: 2016-02-11
+---
+description: We're used to having one Flask app per domain— for a generic site like a lightly customized landing page, that's wasteful. Let's instead think about building a single Flask app that gets fed information from the Nginx configuration to present a customized site per request.
+---
+type: Flask, Nginx

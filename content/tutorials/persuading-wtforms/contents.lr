@@ -1,0 +1,7 @@
+title: Persuading WTForms
+---
+date: 2016-02-11
+---
+description: SelectFields are **horrible** UI experiences for users— lets look about how we can easily persuade WTForms to represent them as checkboxes to make life better for everyone.
+---
+type: flask, wtforms

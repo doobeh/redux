@@ -1,0 +1,54 @@
+title: Persuading WTForms to Generate Checkboxes
+---
+content:
+
+WTForms takes the pain out of handling forms and validation, you define your form, tell it what validation checks the data needs to pass, then WTForms uses it's widgets to generate the html.
+
+A common problem you'll face is "Mutiple select fields suck, they are confusing— how can I show the user a nice list of checkboxes instead?"
+
+The answer is to tell WTForms to use a different widgets to render it's html. Lets first show how we'd render a simple `SelectMultipleField` form:
+
+```python
+from flask import Flask, render_template_string
+from wtforms import SelectMultipleField, Form
+
+app = Flask(__name__)
+
+data = [('value_a','Value A'), ('value_b','Value B'), ('value_c','Value C')]
+
+class ExampleForm(Form):
+    example = SelectMultipleField(
+        'Pick Things!',
+        choices=data
+    )
+
+@app.route('/')
+def home():
+    form = ExampleForm()
+    return render_template_string('<form>{{ form.example }}</form>',form=form)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Voila, we have a basic horrible to use multiple select field, now we just need to change how WTForms renders that SelectMultipleField by telling it to use a couple of different widgets to produce our checkboxes
+
+```python
+from wtforms import widgets
+
+class ExampleForm(Form):
+    example = SelectMultipleField(
+        'Pick Things!',
+        choices=data,
+        option_widget=widgets.CheckboxInput(),
+        widget=widgets.ListWidget(prefix_label=False)
+        )
+```
+
+And that's it-- you'll be rendering check boxes for each of the sets of data, congratulations!
+---
+date: 2016-02-11
+---
+description: SelectFields are **horrible** UI experiences for users— lets look about how we can easily persuade WTForms to represent them as checkboxes to make life better for everyone.
+---
+sort_key: 1

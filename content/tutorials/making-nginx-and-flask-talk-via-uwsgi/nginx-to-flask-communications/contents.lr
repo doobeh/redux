@@ -1,0 +1,63 @@
+title: Nginx to Flask Communications
+---
+content:
+
+Recently I faced a little project, which I think illustrates a good use of the combination of Nginx proxying to uWSGI which is serving a Flask application.
+
+I had a few dozen domains which I wanted to each have a customized landing page, including a simple form to collect visitor email addresses. If the site ever does go live, a quick email blast can be sent to those few inquisitive souls who wished to be alerted.
+
+Setting up a Flask application per domain seemed wasteful in terms of server resource usage, these are domains that will only ever collect a handful of requests at best. So instead I looked at the problem from the other end of the stack-- Nginx is the first port of call for all requests, it knows what domain was requested and in fact passes that information down the line, which can be access via the `flask.Request.environ['SERVER_NAME']` object within Flask. docs.
+
+So one method would be to create a configuration file in the Flask application which would load a different config based on the domain being requested. Which seems reasonable, but once implemented that would mean I would have to do the following each time I wanted to add another landing page domain:
+
+1. Add an Nginx site-configuration for the new domain
+2. Restart Nginx
+3. Add a matching configuration file in the Flask application
+4. Restart uWSGI
+
+So instead, I looked into using the Nginx site-configuration file as the configuration file for the Flask request, which turned out to be simple-- here's an example:
+
+```
+# new_domain.com
+server {
+    listen       80;
+    server_name  .new_domain.com;
+
+    location / { try_files $uri @app; }
+    location @app {
+        uwsgi_pass unix:/tmp/uwsgi.generic.landing.sock;
+        include uwsgi_params;
+
+        uwsgi_param     UWSGI_PYHOME    /var/www/generic_landing/venv;
+        uwsgi_param     UWSGI_CHDIR     /var/www/generic_landing;
+        uwsgi_param     UWSGI_MODULE    run;
+        uwsgi_param     UWSGI_CALLABLE  app;
+
+        uwsgi_param     LANDING_TITLE   "Site Name";
+        uwsgi_param     LANDING_EMAIL   "contact@new_domain.com";
+    }
+}
+```
+
+Then in the Flask application, I can just politely look for those values:
+
+```python
+@app.route('/')
+def landing_page():
+    title = request.environ.get('LANDING_TITLE', 'Default Site')
+    email = request.environ.get('LANDING_EMAIL', 'admin@defaultsite.com')
+    return render_template('landing_page.html', title=title, email=email)
+```
+
+So now if I ever need to add another landing page domain I can just:
+
+1. Create new Nginx site-configuration
+2. Restart Nginx
+
+Which saves me two steps and therefore reduces me making a simple mistake.
+---
+date: 2016-02-11
+---
+description: We're used to having one Flask app per domain— for a generic site like a lightly customized landing page, that's wasteful. Let's instead think about building a single Flask app that gets fed information from the Nginx configuration to present a customized site per request.
+---
+sort_key: 1
